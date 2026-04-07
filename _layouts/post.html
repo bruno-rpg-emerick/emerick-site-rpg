@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="post-full">
+  <div class="post-header">
+    <div class="post-meta-full">
+      <span class="post-date">{{ page.date | date: "%d/%b/%Y — %H:%M" }}</span>
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag | upcase }}</span>
+      {% endfor %}
+      {% if page.classificado %}
+      <span class="classified-stamp">SECRETO</span>
+      {% endif %}
+    </div>
+    <h1 class="post-title-full">{{ page.title | upcase }}</h1>
+    {% if page.fonte %}
+    <div class="fonte">FONTE: {{ page.fonte }}</div>
+    {% endif %}
+  </div>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <div class="post-footer">
+    <a href="{{ '/' | relative_url }}" class="back-link">[ ← VOLTAR AO INÍCIO ]</a>
+    <div class="disclaimer">⚠ Este é um site de ficção criado para RPG de mesa.</div>
+  </div>
+</article>

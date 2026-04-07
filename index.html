@@ -1,0 +1,28 @@
+---
+layout: default
+title: Início
+---
+
+<div class="alert-box">
+  <span class="blink">⚠</span> ATENÇÃO: ESTE SITE ESTÁ SOB VIGILÂNCIA <span class="blink">⚠</span>
+  <small>Sua visita foi registrada. Eles já sabem que você está aqui.</small>
+</div>
+
+<div class="section-header">▌ ÚLTIMAS INVESTIGAÇÕES</div>
+
+{% for post in site.posts %}
+<div class="post-card">
+  <div class="post-meta">
+    <span class="post-date">{{ post.date | date: "%d/%b/%Y — %H:%M" }}</span>
+    {% for tag in post.tags %}
+    <span class="tag">{{ tag | upcase }}</span>
+    {% endfor %}
+    {% if post.classificado %}
+    <span class="classified-stamp">SECRETO</span>
+    {% endif %}
+  </div>
+  <div class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title | upcase }}</a></div>
+  <div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
+  <a class="read-more" href="{{ post.url | relative_url }}">[ LER DOSSIÊ COMPLETO → ]</a>
+</div>
+{% endfor %}
