@@ -1,10 +1,83 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-</head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
 <body>
-  {{ content }}
-</body>
+  <div class="ticker-wrap">
+    <span class="ticker-text">
+      ★ ALERTA: Satélites não identificados sobre o hemisfério sul ★ &nbsp;&nbsp;&nbsp;
+      ★ NOVO: Documentos do Projeto MK-Ultra encontrados ★ &nbsp;&nbsp;&nbsp;
+      ★ URGENTE: Reunião bilionária suspeita em Davos confirmada ★ &nbsp;&nbsp;&nbsp;
+      ★ FONTE ANÔNIMA: Chips nas novas cédulas de 200 reais ★ &nbsp;&nbsp;&nbsp;
+    </span>
+  </div>
+
+  <header class="header-main">
+    <div class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></div>
+    <div class="site-subtitle">:: {{ site.description }} :: est. 1999 ::</div>
+  </header>
+
+  <nav class="nav-bar">
+    <a href="{{ '/' | relative_url }}">[ INÍCIO ]</a>
+    <a href="{{ '/arquivos/' | relative_url }}">[ ARQUIVOS ]</a>
+    <a href="{{ '/dossies/' | relative_url }}">[ DOSSIÊS ]</a>
+    <a href="{{ '/provas/' | relative_url }}">[ PROVAS ]</a>
+    <a href="{{ '/contato/' | relative_url }}">[ CONTATO SEGURO ]</a>
+    <a href="{{ '/sobre/' | relative_url }}">[ SOBRE MIM ]</a>
+    <a class="urgent" href="{{ '/urgente/' | relative_url }}">[ !!! DENÚNCIA URGENTE !!! ]</a>
+  </nav>
+
+  <div class="content-wrap">
+    <main class="main-col">
+      {{ content }}
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="sidebar-title">STATUS DO SITE</div>
+        <div class="status-grid">
+          Servidor: <span class="ok">ONLINE</span><br>
+          Criptografia: <span class="ok">ATIVA</span><br>
+          Vigilância: <span class="danger">DETECTADA</span><br>
+          VPN: <span class="warn">RECOMENDADA</span>
+        </div>
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">CATEGORIAS</div>
+        {% for category in site.categories %}
+        <div class="sidebar-item">
+          <a href="/categoria/{{ category[0] | slugify }}/">{{ category[0] }} ({{ category[1].size }})</a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="sidebar-box">
+        <div class="sidebar-title">ÚLTIMAS POSTAGENS</div>
+        {% for post in site.posts limit:5 %}
+        <div class="sidebar-item">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="hit-counter">
+        VISITAS AO SITE<br>
+        <span class="hit-digits">0087431</span>
+        <div class="hit-label">você está sendo observado</div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="footer-bar">
+    &copy; 1999-{{ site.time | date: "%Y" }} {{ site.title }} &nbsp;|&nbsp;
+    PGP disponível &nbsp;|&nbsp; Use Tor para sua segurança.
+    &nbsp;|&nbsp; <span class="blink red-dot">●</span> AO VIVO
+  </footer>
+
+  </body>
 </html>
