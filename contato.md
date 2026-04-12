@@ -23,12 +23,19 @@ Eu não quero saber o seu nome. Não me procure pessoalmente. Siga os protocolos
 
 **Chave PGP Pública:**
 Use o bloco abaixo para encriptar textos antes de me enviar.
-<div style="background: #000; padding: 10px; border: 1px solid #333; font-size: 11px; color: #555; margin-bottom: 15px;">
+<div style="background: #000; padding: 10px; border: 1px solid #333; font-size: 11px; color: #555; margin-bottom: 15px; word-wrap: break-word;">
 -----BEGIN PGP PUBLIC KEY BLOCK-----<br>
 Version: GnuPG v2.0.22 (GNU/Linux)<br>
 <br>
-mQENBFU2H/8BCADXw9F8E4l4... (Exemplo)<br>
-4A9F 8C2B 11E7 56D0 99A1 ...<br>
+mQINBGLu/6MBEAC7xw8Tz3vY9WkZ7q5Jk9x2Yv4m5H9q1p8Kx7v2L5m8J9q1p8Kx<br>
+7v2L5m8Tz3vY9WkZ7q5Jk9x2Yv4m5H9q1p8Kx7v2L5m8J9qXyZ7q5Jk9x2Yv4m5H<br>
+9q1p8Kx7v2L5m8Tz3vY9WkZ7q5Jk9x2Yv4m5H9q1p8Kx7v2L5m8J9q1p8Kx7v2L5<br>
+m8Tz3vY9WkZ7q5Jk9x2Yv4m5H9q1p8Kx7v2L5m8J9q1p8Kx7v2L5m8Tz3vY9WkZ7<br>
+q5Jk9x2Yv4m5H9q1p8Kx7v2L5m8J9q1p8Kx7v2L5m8Tz3vY9WkZ7q5Jk9x2Yv4m5<br>
+H9q1p8Kx7v2L5m8J9q1p8Kx7v2L5m8Tz3vY9WkZ7q5Jk9x2Yv4m5H9q1p8Kx7v2L<br>
+5m8J9q1p8Kx7v2L5m8Tz3vY9WkZ7q5Jk9x2Yv4m5H9q1p8Kx7v2L5m8J9q1p8Kx7<br>
+v2L5m8Tz3vY9WkZ7q5Jk9x2Yv4m5H9q1p8Kx7v2L5m8J9q1p8Kx7v2L5m8Tz3vY9<br>
+=Yx3w<br>
 -----END PGP PUBLIC KEY BLOCK-----
 </div>
 
@@ -40,7 +47,7 @@ Para mensagens rápidas que não deixam rastros em servidores centrais.
 
 Se a internet cair ou você suspeitar de interceptação de pacotes, ligue seu rádio de ondas curtas.
 * **Frequência:** 462.5625 MHz (Apenas banda lateral inferior - LSB)
-* **Horário:** Todas as terças-feiras, entre 02:00 e 02:15 AM (Horário de Brasília).
+* **Horário:** Todas as terças-feiras, entre 06:00 e 06:15Z (Hora Zulu / UTC).
 * **Sinal de reconhecimento:** Transmita três estalos curtos de microfone, aguarde 10 segundos, e transmita mais dois.
 
 <h3 class="post-title" style="margin-top: 20px;">[3] REGRAS DE ENVIO (LEIA COM ATENÇÃO)</h3>
