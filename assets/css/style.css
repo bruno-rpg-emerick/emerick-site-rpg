@@ -26,7 +26,7 @@ a:hover { color: #ff6600; }
 }
 .ticker-text {
   display: inline-block;
-  animation: ticker 24s linear infinite;
+  animation: ticker 24s steps(120) infinite;
   padding-left: 100%;
 }
 @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
