@@ -15,6 +15,11 @@ Se você chegou até aqui, provavelmente tem algo que eles não querem que o pú
 
 Eu não quero saber o seu nome. Não me procure pessoalmente. Siga os protocolos abaixo.
 
+<div class="classified-image">
+  <img src="/images/imagem_tela_contatos.png" alt="Vigilância de Ponto de Contato">
+  <div class="image-caption">FOTO ARQUIVO: PONTO DE ENCONTRO 04</div>
+</div>
+
 <h3 class="post-title" style="margin-top: 20px;">[1] COMUNICAÇÃO DIGITAL</h3>
 
 **E-mail seguro (ProtonMail):**
