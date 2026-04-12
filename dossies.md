@@ -12,21 +12,24 @@ permalink: /dossies/
 </div>
 
 {% for post in site.posts %}
-  <div class="post-card">
-    <div class="post-meta">
-      <span class="post-date">▶ {{ post.date | date: "%d/%m/%Y" }}</span> 
+
+  {% if post.categories contains 'dossies' %}
+  
+    <div class="post-card">
+      <div class="post-meta">
+        <span class="post-date">▶ {{ post.date | date: "%d/%m/%Y" }}</span> 
+        <span class="tag">DOSSIÊ</span>
+      </div>
       
-      {% for category in post.categories %}
-        <span class="tag">{{ category | upcase }}</span>
-      {% endfor %}
+      <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+      
+      <a href="{{ post.url | relative_url }}" class="read-more">[ LER DOSSIÊ COMPLETO _ ]</a>
     </div>
-    
-    <h2 class="post-title">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h2>
-    
-    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-    
-    <a href="{{ post.url | relative_url }}" class="read-more">[ LER DOSSIÊ COMPLETO _ ]</a>
-  </div>
+
+  {% endif %}
+  
 {% endfor %}
