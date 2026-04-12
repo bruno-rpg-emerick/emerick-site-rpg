@@ -141,3 +141,70 @@ a:hover { color: #ff6600; }
   .site-title { font-size: 36px; }
   .nav-bar a.urgent { margin-left: 0; }
 }
+
+/* =========================================
+   FILTRO CRT - EFEITO MONITOR DE TUBO
+   ========================================= */
+
+/* 1. Scanlines (Linhas horizontais de varredura) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Cria as listras escuras horizontais */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.15)
+  );
+  background-size: 100% 4px; /* Ajuste a grossura da linha aqui (2px a 4px fica bom) */
+  z-index: 999;
+  pointer-events: none; /* Essencial: permite clicar nos botões e links por baixo da camada */
+}
+
+/* 2. Vinheta (Bordas escuras) e Flicker (Tremor de tela) */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Cria uma sombra circular nas bordas da tela */
+  background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.5) 100%);
+  z-index: 1000;
+  pointer-events: none;
+  animation: crt-flicker 0.15s infinite;
+}
+
+/* Animação para a tela "piscar" muito sutilmente */
+@keyframes crt-flicker {
+  0%   { opacity: 0.95; }
+  50%  { opacity: 0.88; }
+  100% { opacity: 0.95; }
+}
+
+/* 3. Aberração Cromática (Efeito 3D nas letras) */
+/* Substitua a classe .site-title existente por esta para adicionar o efeito vermelho/azul */
+.site-title {
+  font-family: 'VT323', monospace;
+  font-size: 52px;
+  color: #00ff41;
+  letter-spacing: 6px;
+  line-height: 1;
+  /* Combina o neon original com o desfoque de lente vermelho e ciano */
+  text-shadow: 
+    0 0 10px #00ff41, 
+    3px 0px 1px rgba(255,0,0,0.7), 
+    -3px 0px 1px rgba(0,255,255,0.7);
+}
+
+/* Aplicando uma versão mais leve da aberração cromática em outros alertas */
+.alert-box, .section-header, .urgent {
+  text-shadow: 1.5px 0px 0px rgba(255,0,0,0.5), -1.5px 0px 0px rgba(0,255,255,0.5);
+}
