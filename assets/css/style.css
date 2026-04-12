@@ -208,3 +208,37 @@ body::after {
 .alert-box, .section-header, .urgent {
   text-shadow: 1.5px 0px 0px rgba(255,0,0,0.5), -1.5px 0px 0px rgba(0,255,255,0.5);
 }
+
+.audio-intercept {
+  background: #050a05;
+  border: 1px solid #1a3a1a;
+  padding: 15px;
+  margin: 20px 0;
+}
+.custom-player {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  filter: invert(100%) hue-rotate(90deg) brightness(1.5);
+}
+.classified-image {
+  margin-bottom: 30px;
+  border: 1px solid #1a3a1a;
+  padding: 4px;
+  background: #000;
+  text-align: center;
+}
+.classified-image img {
+  max-width: 100%;
+  display: block;
+  /* Esse filtro vai deixar as fotos dos OVNIs verdes e com cara de câmera antiga */
+  filter: grayscale(100%) sepia(100%) hue-rotate(85deg) saturate(300%) contrast(1.2);
+  opacity: 0.85;
+}
+.image-caption {
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  color: #ff6600;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
