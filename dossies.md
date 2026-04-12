@@ -11,9 +11,22 @@ permalink: /dossies/
   <small>Credenciais verificadas. Acesso concedido.</small>
 </div>
 
-Bem-vindo à área de dossiês. Tudo o que a mídia tenta abafar, eu documento aqui. 
-
-* [Em breve] A verdade sobre o incidente em Varginha.
-* [Em breve] O que realmente tem no subsolo do aeroporto de Denver.
-
-*(Aqui você pode escrever o texto que quiser usando Markdown ou HTML normal, e ele vai aparecer no meio da tela principal!)*
+{% for post in site.posts %}
+  <div class="post-card">
+    <div class="post-meta">
+      <span class="post-date">▶ {{ post.date | date: "%d/%m/%Y" }}</span> 
+      
+      {% for category in post.categories %}
+        <span class="tag">{{ category | upcase }}</span>
+      {% endfor %}
+    </div>
+    
+    <h2 class="post-title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
+    
+    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+    
+    <a href="{{ post.url | relative_url }}" class="read-more">[ LER DOSSIÊ COMPLETO _ ]</a>
+  </div>
+{% endfor %}
